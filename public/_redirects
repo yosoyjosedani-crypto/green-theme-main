@@ -1,0 +1,14 @@
+# Redirect rules for Netlify - Next.js Application
+# This handles client-side routing and API routing for Next.js
+
+# API routes - redirect to Netlify functions
+/api/* /.netlify/functions/:splat 200
+
+# Static assets - direct serve with long cache
+/_next/static/* /static/:splat 200
+
+# Public assets - serve directly
+/public/* /:splat 200
+
+# Handle Next.js client-side routing
+/* /index.html 200
